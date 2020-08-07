@@ -1,18 +1,19 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
-    use Authenticatable, Authorizable;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+    protected $table = 'ticket';
+
     protected $fillable = [
       'id', 'ip', 'status', 'notes' 
     ];
