@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class ExampleController extends Controller
+use App\Models\Ticket; //user the latest name (Ticket) to use Model
+
+class TicketController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,5 +16,8 @@ class ExampleController extends Controller
         //
     }
 
-    //
+    public function index(){
+        $data = Ticket::all(); //elloquent allow us to catch all data
+        return response($data);
+    }
 }
